@@ -1,17 +1,68 @@
 body{
     background-color: rgb(255, 255, 255);
 }
+
 header{
     background-color: #E0F9BE;
-    width: 90rem;
+    width: 100%;
     height: 7.5rem;
     flex-shrink: 0;
     padding: 1rem 2rem;
 }
-
-.navbar {
-    display: flex;
-    justify-content: center;
+/* ----------------- navbar -------------------------*/
+.nav {
     list-style: none;
     gap: 2rem;
+}
+.nav-content{
+    display: flex;
+    justify-content: space-evenly;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+ul{
+    list-style: none;
+}
+/* ------------- secao de capa -------------------- */
+.capa {
+    position: relative; /* necessário para conter a imagem absoluta */
+}
+.capa img {
+    width: 100%;
+    height: auto;
+    display: block; /* remove espaços extras em volta */
+}
+.img-base{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.img-sobreposta {
+    position: absolute;
+    bottom: -20px; /* faz a imagem sobrepor por baixo */
+    left: 0;
+    width: 100%;
+    pointer-events: none; /* opcional */
+}
+/* ------------ links ---------------------------*/
+a {
+    text-decoration: none;
+    color: #000000; /* cor personalizada */
+}
+
+a:hover {
+    color: #008A00; /* cor quando o mouse passa por cima */
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #000000; /* cor após o link ter sido visitado */
+}
+
+a:active {
+    color: #008A00; /* cor ao clicar */
 }
