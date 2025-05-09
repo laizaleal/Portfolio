@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+nav{
+    background: #E0F9BE;
+    width: 90rem;
+    height: 7.5rem;
+    flex-shrink: 0;
+}
