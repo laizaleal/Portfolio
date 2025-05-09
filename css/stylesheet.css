@@ -9,7 +9,7 @@ body{
 header{
     background-color: #E0F9BE;
     width: 100%;
-    height: 7.5rem;
+    height: 7rem;
     flex-shrink: 0;
     padding: 1rem 1rem;
 }
@@ -77,12 +77,13 @@ a:active {
     flex-direction: row;
     gap: 8rem;
     align-items: center;
+    justify-content:center;
     position:relative;
-    margin: 3rem, 6rem, 3rem;
+    padding: 3rem 6rem;
 }
 .sobre-img {
-    max-width: 200px;
-    max-height: 300px;
+    max-width: 500px;
+    max-height: 400px;
     height: auto;
     flex-shrink: 0;
     overflow: hidden;
@@ -137,7 +138,17 @@ a:active {
 }
 /* ------------------ secao projetos ----------------*/
 .projetos{
-     height: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    grid-template-rows: repeat(2, auto);   /* 2 linhas automáticas */
+    gap: 1rem;
+}
+.galeria img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px; /* opcional para deixar mais bonito */
 }
 /* ------------------ secao jornada ----------------*/
 .jornada{
@@ -171,10 +182,9 @@ footer{
     display: flex;
     height: 600px;
     flex-direction: column;
-    gap: 8rem;
+    gap: 10rem;
     align-items: center;
     position:relative;
-    margin: 3rem, 6rem, 3rem;
 }
 .redes{
     display: inline-block;
