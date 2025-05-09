@@ -2,8 +2,16 @@ body{
     background-color: rgb(255, 255, 255);
 }
 header{
-    background: #E0F9BE;
+    background-color: #E0F9BE;
     width: 90rem;
     height: 7.5rem;
     flex-shrink: 0;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
 }
