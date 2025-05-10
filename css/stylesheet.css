@@ -138,27 +138,103 @@ a:active {
 }
 /* ------------------ secao projetos ----------------*/
 .projetos{
-    height: 600px;
+    height: auto;
+    padding: 2rem;
+    text-align: center; /* centraliza h2 e button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.projetos h2{
+    margin-bottom: 1rem;
+    color: #000;
+    font-family: Jost;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-    grid-template-rows: repeat(2, auto);   /* 2 linhas automáticas */
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 .galeria img {
+    aspect-ratio: 1 / 1;     /* força o quadrado */
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px; /* opcional para deixar mais bonito */
+    object-fit: cover;       /* cobre todo o espaço do quadrado */
+    border-radius: 10px;
+    display: block;
+}
+.projetos button{
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border-color: #ACDD91;
+    background: #ACDD91;
 }
 /* ------------------ secao jornada ----------------*/
 .jornada{
-     height: 600px;
+    height: 700px;
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    gap: 8rem;
+    align-items: center;
+    justify-content:center;
+    position:relative;
+    padding: 3rem 6rem;
 }
 .titulo{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+.jornada-conteudo{
+    display: flex;
+    flex-direction: row;
+    max-width: 55%;
+    width: 350px;
+    height:fit-content;
+    color: #000;
+    text-align: justify;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: 'ss01' on;
+    font-family: Jost;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.slideshow-container {
+  width: 400px;   /* ajuste o tamanho como preferir */
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
 /* ------------------ secao ferramentas ----------------*/
 .espiral {
   width: 100%;
@@ -182,18 +258,53 @@ footer{
     display: flex;
     height: 600px;
     flex-direction: column;
-    gap: 10rem;
+    gap: 0rem;
     align-items: center;
     position:relative;
+
 }
-.redes{
-    display: inline-block;
+.redes {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.redes h2 {
+    color: #008E00;
+    font-family: "Meow Script";
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.redes-icon {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.redes-icon img {
+    width: 60px;
+    height: 60px;
 }
 .contato{
     display: flex;
     flex-direction: row;
+    gap: 5rem;
 }
 .contato-info{
     display: flex;
     flex-direction: column;
+}
+.linha {
+    display: block;
+    height: 2px;
+    border-color: #008A00;
+    width: 90%;
+    border-width: 2px;
+    max-width: 10000px;
+    border-style: solid;
 }
