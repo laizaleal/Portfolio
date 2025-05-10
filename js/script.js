@@ -7,5 +7,5 @@ function showSlide() {
   index = (index + 1) % slides.length;
 }
 
-setInterval(showSlide, 3000);
+setInterval(showSlide, 3500);
 

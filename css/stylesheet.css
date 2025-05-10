@@ -4,8 +4,14 @@
 }
 body{
     background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+main {
+  flex: 1;
+}
 header{
     background-color: #E0F9BE;
     width: 100%;
@@ -73,7 +79,7 @@ a:active {
 .sobre{
     background-color:#ACDD91;
     display: flex;
-    height: 600px;
+    height: 800px;
     flex-direction: row;
     gap: 8rem;
     align-items: center;
@@ -138,7 +144,7 @@ a:active {
 }
 /* ------------------ secao projetos ----------------*/
 .projetos{
-    height: auto;
+    height: 800px;
     padding: 2rem;
     text-align: center; /* centraliza h2 e button */
     display: flex;
@@ -177,10 +183,11 @@ a:active {
     border-radius: 1.25rem;
     border-color: #ACDD91;
     background: #ACDD91;
+    margin-bottom: 4rem;
 }
 /* ------------------ secao jornada ----------------*/
 .jornada{
-    height: 700px;
+    height: 1000px;
     display: flex;
     height: 600px;
     flex-direction: column;
@@ -190,15 +197,38 @@ a:active {
     position:relative;
     padding: 3rem 6rem;
 }
-.titulo{
+.jornada h2{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+    font-family: Jost;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
-.jornada-conteudo{
+.titulo {
+    width: 100vw;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* espaço entre espirais e texto */
+    margin-top: 6rem;
+}
+.jornada-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 5rem auto;
+}
+.jornada-texto{
+    display: flex;
+    flex-direction: column;
     max-width: 55%;
     width: 350px;
     height:fit-content;
@@ -213,11 +243,12 @@ a:active {
     line-height: normal;
 }
 .slideshow-container {
-  width: 400px;   /* ajuste o tamanho como preferir */
-  height: 400px;
+  width: 500px;   /* ajuste o tamanho como preferir */
+  height: 500px;
   position: relative;
   overflow: hidden;
   margin: auto;
+  border-radius: 20px;
 }
 
 .slide {
@@ -240,12 +271,14 @@ a:active {
   width: 100%;
   max-width: 100vw;     /* Garante que não passe da largura da tela */
   overflow: hidden;     /* Esconde qualquer transbordamento */     /* Corrige a sintaxe da margem */
-  display: block;        /* Usa um display que respeite caixa de layout */
+  display: block;   
+  margin-top: 2rem;     /* Usa um display que respeite caixa de layout */
 }
 .espiral img {
   width: 100%;
   height: auto;
   display: block;
+  margin-top: 6rem;     
 }
 .ferramentas-icon{
     display:flex;
@@ -253,15 +286,14 @@ a:active {
     margin: 50px 10px 50px 10px;
 }
 /* ------------------ secao footer ----------------*/
-footer{
-    background-color:#ACDD91;
-    display: flex;
-    height: 600px;
-    flex-direction: column;
-    gap: 0rem;
-    align-items: center;
-    position:relative;
-
+footer {
+  width: 100%;
+  background-color: #ACDD91;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 2rem 1rem; /* use padding em vez de height fixa */
 }
 .redes {
     margin-top: 1rem;
@@ -290,14 +322,24 @@ footer{
     width: 60px;
     height: 60px;
 }
-.contato{
+.contato {
     display: flex;
-    flex-direction: row;
-    gap: 5rem;
+    justify-content: center;   /* centraliza os blocos internamente */
+    align-items: flex-start;   /* alinha ao topo */
+    gap: 6rem;                 /* espaço entre as colunas */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;            /* centraliza a .contato na página */
+    padding: 2rem 1rem;
 }
-.contato-info{
+.contato-info, .experiencia{
     display: flex;
     flex-direction: column;
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 .linha {
     display: block;
