@@ -88,8 +88,11 @@ a:active {
     padding: 3rem 6rem;
 }
 .sobre-img {
+    position: relative;
     max-width: 500px;
     max-height: 400px;
+    min-width: 200px;
+    min-height: 300px;
     height: auto;
     flex-shrink: 0;
     overflow: hidden;
@@ -142,6 +145,65 @@ a:active {
     z-index: 1;
     pointer-events: none;
 }
+/*--------- ANIMACOES ESTRELAS - SOBRE------------*/
+/* Estrela verde (topo direito) */
+.estrela {
+  position: absolute;
+  top: 17%;
+  left: 11%;
+  transform-origin: center;
+  animation: girarAlternado 4s ease-in-out infinite alternate;
+}
+
+/* Brilho branco (topo esquerdo) */
+.brilho {
+  position: absolute;
+  top: 8%;
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  animation: pulsar 2s ease-in-out infinite;
+  transform-origin: center;
+
+}
+
+/* Rodinha decorativa (base direita) */
+.rodinha {
+  position: absolute;
+  bottom: 17%;
+  right: 42%;
+  width: 180px;
+  height: 180px;
+  animation: girarAntihorario 10s linear infinite;
+  transform-origin: center;
+
+}
+
+@keyframes girarAlternado {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes girarAntihorario {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg); /* sentido oposto */
+  }
+}
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+}
 /* ------------------ secao projetos ----------------*/
 .projetos{
     height: 800px;
@@ -185,6 +247,38 @@ a:active {
     background: #ACDD91;
     margin-bottom: 4rem;
 }
+/* --------- ANIMACAO GALERIA E BOTAO ---------------*/
+.galeria img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease; /* suaviza a animação */
+}
+
+.galeria img:hover {
+    transform: scale(1.05); /* aumenta levemente a imagem */
+}
+
+.projetos button {
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: none;
+    background: #ACDD91;
+    margin-bottom: 4rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.projetos button:hover {
+    transform: scale(1.08);
+    background-color: #9ccf77; /* tom mais escuro para dar destaque */
+}
+
 /* ------------------ secao jornada ----------------*/
 .jornada{
     height: 1000px;
@@ -284,6 +378,18 @@ a:active {
     display:flex;
     justify-content: space-evenly;
     margin: 50px 10px 50px 10px;
+}
+/* ---------- ANIMACAAAOOO -----------------------*/
+.ferramentas-icon img {
+  width: 75px;
+  height: 75px;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ferramentas-icon img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.15);
 }
 /* ------------------ secao footer ----------------*/
 footer {
