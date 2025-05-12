@@ -17,7 +17,89 @@ header{
     width: 100%;
     height: 7rem;
     flex-shrink: 0;
-    padding: 1rem 1rem;
+    padding: 1rem;
+}
+.section {
+  padding: 2rem;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.item {
+  flex: 1 1 300px; /* Flexível com largura mínima de 300px */
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Estilos para telas pequenas */
+@media screen and (max-width: 1080px) {
+  body {
+    font-size: 1rem;
+  }
+
+  header {
+    font-size: 1.2rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .item {
+    flex: 1 1 100%;
+  }
+
+  /* Ajustes para textos e espaçamentos */
+  .sobre-texto,
+  .jornada-texto,
+  .contato-info,
+  .experiencia {
+    max-width: 90%;
+    width: 100%;
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+
+  .sobre-texto h2,
+  .projetos h2,
+  .titulo h2,
+  .redes h2,
+  .jornada h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  /* Jornada específica */
+  .jornada {
+    padding: 2rem;
+    gap: 0.5rem;
+  }
+
+  .titulo {
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 0.5rem;
+  }
+
+  .jornada-conteudo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .slideshow-container {
+    max-width: 90vw;
+  }
 }
 /* ----------------- navbar -------------------------*/
 .nav {
@@ -59,33 +141,35 @@ ul{
 }
 /* ------------ links ---------------------------*/
 a {
-    text-decoration: none;
-    color: #000000; /* cor personalizada */
+  text-decoration: none;
+  color: #000000; /* cor personalizada */
 }
 
 a:hover {
-    color: #008A00; /* cor quando o mouse passa por cima */
-    text-decoration: underline;
+  color: #008A00; /* cor quando o mouse passa por cima */
+  text-decoration: underline;
 }
 
 a:visited {
-    color: #000000; /* cor após o link ter sido visitado */
+  color: #000000; /* cor após o link ter sido visitado */
 }
 
 a:active {
-    color: #008A00; /* cor ao clicar */
+  color: #008A00; /* cor ao clicar */
 }
 /* -------------SECAO SOBRE -----------------*/
 .sobre{
-    background-color:#ACDD91;
-    display: flex;
-    height: 800px;
-    flex-direction: row;
-    gap: 8rem;
-    align-items: center;
-    justify-content:center;
-    position:relative;
-    padding: 3rem 6rem;
+  position: relative;
+  background-color:#ACDD91;
+  display: flex;
+  min-height: 60vh; 
+  height: auto;
+  flex-direction: row;
+  gap: 8rem;
+  align-items: center;
+  justify-content:center;
+  position:relative;
+  padding: 3rem 6rem;
 }
 .sobre-img {
     position: relative;
@@ -206,7 +290,9 @@ a:active {
 }
 /* ------------------ secao projetos ----------------*/
 .projetos{
-    height: 800px;
+  position: relative;
+    min-height: 60vh; 
+    height: auto;
     padding: 2rem;
     text-align: center; /* centraliza h2 e button */
     display: flex;
@@ -247,6 +333,29 @@ a:active {
     background: #ACDD91;
     margin-bottom: 4rem;
 }
+/* ------------ ANIMACAO ESTRELAS ---------------*/
+.estrela-proj{
+  position: absolute;
+  top: 8%;
+  left: 36%;
+  transform-origin: center;
+  animation: girarAlternado 5s ease-in-out infinite alternate;
+}
+.estrela-proj-2{
+  position: absolute;
+  top: 10%;
+  right: 36%;
+  transform-origin: center;
+  animation: girarAlternado 4s ease-in-out infinite alternate;
+}
+@keyframes girarAlternado {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
 /* --------- ANIMACAO GALERIA E BOTAO ---------------*/
 .galeria img {
     aspect-ratio: 1 / 1;
@@ -281,7 +390,7 @@ a:active {
 
 /* ------------------ secao jornada ----------------*/
 .jornada{
-    height: 1000px;
+    min-height: 65vh; 
     display: flex;
     height: 600px;
     flex-direction: column;
@@ -290,6 +399,7 @@ a:active {
     justify-content:center;
     position:relative;
     padding: 3rem 6rem;
+    box-sizing: border-box;
 }
 .jornada h2{
     width: 100%;
@@ -337,8 +447,9 @@ a:active {
     line-height: normal;
 }
 .slideshow-container {
-  width: 500px;   /* ajuste o tamanho como preferir */
-  height: 500px;
+  width: 100%;
+  max-width: 500px;     /* limite de largura para telas grandes */
+  aspect-ratio: 1 / 1;  /* mantém proporção quadrada */
   position: relative;
   overflow: hidden;
   margin: auto;
@@ -382,7 +493,8 @@ a:active {
 /* ---------- ANIMACAAAOOO -----------------------*/
 .ferramentas-icon img {
   width: 75px;
-  height: 75px;
+  min-height: 10vh; 
+  height: auto;
   filter: grayscale(100%);
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
@@ -394,6 +506,8 @@ a:active {
 /* ------------------ secao footer ----------------*/
 footer {
   width: 100%;
+  min-height: 60vh; 
+  height: auto;
   background-color: #ACDD91;
   display: flex;
   flex-direction: column;
